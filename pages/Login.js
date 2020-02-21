@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 
 class Login extends Component {
 
@@ -21,6 +19,36 @@ class Login extends Component {
     this.setState({
      password : text
     });
+   }
+
+   loginButton = () => {
+      console.log('login');
+    
+      const data = { 
+        email: this.state.id,
+        password: this.state.password 
+      };
+
+      // fetch('http://10.58.3.127/user/login', {
+      //   method: 'POST',
+      //   body: JSON.stringify(data),
+      // })
+      // .then((response) =>
+      // response.json()
+      // )
+      // .then((response) => {
+      // console.log('Success:', response.token);
+      // if (response.token) {
+    this.props.navigation.navigate('Main')
+      // }else {
+      //   alert('아이디 혹은 비밀번호가 틀렸습니다.');
+      // }
+      // })
+      // .catch((error) => {
+      //   console.error('Error: ', error);
+      // });
+
+
    }
 
   render() {
@@ -50,7 +78,7 @@ class Login extends Component {
 
           {/* login button */}
           <TouchableOpacity
-                onPress={() => {this.props.navigation.navigate('Main')}}
+                onPress={this.loginButton}
                 style={{  marginTop: 30,
                           width: '90%',
                           height: 40,

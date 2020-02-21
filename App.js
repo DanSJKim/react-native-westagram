@@ -1,30 +1,10 @@
 import * as React from 'react';
 import { ActivityIndicator, StyleSheet, View, Text } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 import Login from './pages/Login';
 import Main from './Main'
-import MainFeed from './pages/MainFeed'
 import { createSwitchNavigator } from 'react-navigation';
 import { createAppContainer } from 'react-navigation';
 
-// const Stack = createStackNavigator();
-// //const Switch = createSwitchNavigator(Login);
-
-// class App extends React.Component {
-//   render() {
-//     return (
-//       <NavigationContainer>
-//         <Stack.Navigator>
-//           <Stack.Screen name="Login" component={Login} />
-//           <Stack.Screen name="Main" component={Main} />
-//         </Stack.Navigator>
-//       </NavigationContainer>
-//     );
-//   }
-// }
-
-// export default App;
 
 class App extends React.Component {
     constructor() {

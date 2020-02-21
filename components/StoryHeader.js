@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text, View, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, ScrollView, FlatList } from 'react-native'
 import StoryItem from './StoryItem'
 
 class StoryHeader extends Component {
@@ -20,7 +20,7 @@ export default StoryHeader
 
 const styles = StyleSheet.create({
     header: {
-      height: '15%',
+      height: 100,
       width: '100%',
       backgroundColor: '#ffffff',
       flexDirection: 'row',
