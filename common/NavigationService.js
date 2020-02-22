@@ -13,7 +13,6 @@ function navigate(routeName, params) {
             params,
         })
     )
-    
 }
 
 function back() { 

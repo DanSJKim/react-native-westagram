@@ -69,12 +69,10 @@ const styles = StyleSheet.create({
     },
     bottomFirstCommentText: {
         color: 'gray',
-        fontSize: 12,
         marginLeft: 3
     },
     bottomCommentText: {
         color: 'gray',
-        fontSize: 12,
         marginLeft: 15
         
     }

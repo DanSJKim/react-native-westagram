@@ -34,7 +34,6 @@ export default class FeedComment extends Component {
 
     }
 
-
     render() {
         console.log('render::: ',this.state.comments)
         return (

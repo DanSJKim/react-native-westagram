@@ -14,29 +14,31 @@ import MyPage from './pages/MyPage';
 import Photo from './pages/Photo';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
+
 const Tab = createBottomTabNavigator();
 
+
 export class Main extends Component {
+    
+   state = {
+     modalVisible: false,
+   }
 
-    state = {
-      modalVisible: false,
-    };
+    setModalVisible = (visible) => {
 
-    setModalVisible = visible => {
-      console.log('Main visible: ', visible)
-      this.setState({modalVisible: visible});
+      this.props.navigation.navigate('Photo');
       
     }
+
     
     render() {
 
-      console.log('mv: ', this.state.modalVisible)
         return (
           <React.Fragment>
-            <NavigationContainer>
-                
+            {this.state.modalVisible && <Photo setModalVisible={this.setModalVisible}/>}
+        
                 <Tab.Navigator
-
+                
                 headerMode="float"
                 screenOptions={{
                     headerTintColor: 'white',
@@ -84,21 +86,20 @@ export class Main extends Component {
                     showLabel: false,
                   }}
                 >
-                    <Tab.Screen name="MainStack" component={MainStackScreen} />
+                    <Tab.Screen name="MainStack" component={MainStackScreen} initialParams={{ articles: this.state.articles }} />
                     <Tab.Screen name="Search" component={Search} />
-                    <Tab.Screen name="Photo" component={Photo} label="Disabled" disabled/>
+                    <Tab.Screen name="Photo" component={Search} label="Disabled"/>
                     <Tab.Screen name="Activities" component={Activities} />
                     <Tab.Screen name="MyPage" component={MyPage} />
+
                 </Tab.Navigator>
-            </NavigationContainer>
-            <View style={styles.photoButton}> 
-              <TouchableOpacity onPress={() => {this.setModalVisible(true)}}>
-              <AntDesign name='plussquareo'  size='25' />
-              </TouchableOpacity>
-            </View>
-            <Photo modalVisible={this.state.modalVisible} setModalVisible={this.setModalVisible}/>
             
-               
+                <View style={styles.photoButton}> 
+                  <TouchableOpacity onPress={() => this.setModalVisible(true)}>
+                    <AntDesign name='plussquareo' size={25} />
+                  </TouchableOpacity>
+                </View>
+                  
             </React.Fragment>
         );
     }
@@ -110,6 +111,6 @@ const styles = StyleSheet.create({
   photoButton: {
     position: 'absolute',
     bottom: 46,
-    left: 195,
+    left: '47%',
   },
 })

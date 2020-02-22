@@ -6,7 +6,8 @@ import FeedComment from '../pages/FeedComment';
 
 const settingStack = createStackNavigator();
 
-const mainStack = () => {
+const mainStack = (props) => {
+    console.log('thisthis ',props.route.params.articles)
     return (
           <settingStack.Navigator initialRouteName="MainFeed">
             <settingStack.Screen name="MainFeed" component={MainFeed} 
@@ -15,12 +16,11 @@ const mainStack = () => {
                   <Image 
                   style={{ width: 110, height: 33 }}
                   source={require('../images/logo_text.png')}/>
-              )
-              }}
+              )}}
+              initialParams={{ articles: props.route.params.articles }}
             
             />
-            <settingStack.Screen name="FeedComment" component={FeedComment
-            } 
+            <settingStack.Screen name="FeedComment" component={FeedComment} 
             options={{
               title: '댓글',
               headerBackTitle: ''

@@ -32,10 +32,8 @@ class Article extends Component {
              comments: [...this.state.comments, newComment],
              comment: ''
             });
-        
       }
-
-    
+      
     deleteFeedComment = (itemKey) => {
         this.setState({
             comments: [...this.state.comments.filter(comment => comment.id !== itemKey)]

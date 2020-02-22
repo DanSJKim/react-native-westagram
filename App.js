@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { ActivityIndicator, StyleSheet, View, Text } from 'react-native';
 import Login from './pages/Login';
-import Main from './Main'
+import Main from './Main';
+import RootStack from './common/RootStack';
 import { createSwitchNavigator } from 'react-navigation';
 import { createAppContainer } from 'react-navigation';
 
@@ -43,12 +44,12 @@ class App extends React.Component {
   
   export default createAppContainer(createSwitchNavigator(
     {
-      App: App,
+      //App: App,
       Login: Login,
-      Main: Main,
+      RootStack: RootStack,
     },
     {
-      initialRouteName: 'Login',
+      initialRouteName: 'RootStack',
     }
   ));
   
