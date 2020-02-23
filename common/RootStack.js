@@ -21,29 +21,7 @@ export default class RootStack extends Component {
         modalVisible: false,
     }
 
-    setImage = (img) => {
-        console.log('RootStack setImage: ',img);
-        this.setState(this.state.image=img);
-      }
-  
-    // addArticle = (content, img) => {
-    //     console.log('add!!!!');
-    //     let newComment ={
-    //         id: uuid.v4(),
-    //         name: 'kim',
-    //         image: img,
-    //         body: content,
-    //       }
-    
-    //       this.setState({
-    //            articles: [...this.state.articles, newComment],
-    //       });
-    // }
-
-
-
     render() {
-        //console.log('updated');
         const Stack = createStackNavigator();
         
         //console.log('articles? ', this.state.articles)
@@ -61,17 +39,13 @@ export default class RootStack extends Component {
                         name="Main"
                         component={Main}
                         options={{ headerShown: false }}
-                        initialParams={{ articles: this.state.articles }}
                         />
 
                         {/* Photo */}
-                        <Stack.Screen 
-                        // options = {({navigation, screenProps}) => ({
-                        // })}
+                        <Stack.Screen
                         title="포토"
                         name="Photo" 
                         component={Photo}
-                        initialParams={{ setImage: this.setImage }}
                         />
 
                         {/* NewFeed */}

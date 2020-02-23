@@ -60,7 +60,7 @@ class Article extends Component {
 
                 {/* feed image */}
                 <View>
-                    <Image style={styles.feedImage} source={{uri: 'https://i.pinimg.com/originals/82/d0/b0/82d0b0027f788473abbe7f9ed2e2880b.jpg'}}></Image>
+                    <Image style={styles.feedImage} source={{uri: this.props.image}}></Image>
                 </View>
 
                 {/* feed bottom */}
@@ -80,6 +80,11 @@ class Article extends Component {
                         </View>
                         {/* bookmark */}
                         <FontAwesome name='bookmark-o' size={30} />
+                    </View>
+
+                    <View style={{ paddingBottom: 5, alignItems: 'center', flexDirection: 'row' }}>
+                        <Text style={{fontWeight: '600'}}> wecodeman </Text>
+                        <Text> {this.props.body} </Text>
                     </View>
 
                     {/* feed comment list */}

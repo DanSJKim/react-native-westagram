@@ -68,7 +68,7 @@ _pickImage = async () => {
     this.setState({ image: result.uri });
     console.log('result image: ', this.state.image);
     //console.log('this.props.setimage: ', this.props.route.params);
-    this.props.route.params.setImage(this.state.image);
+    //this.props.route.params.setImage(this.state.image);
   }
 };
 }

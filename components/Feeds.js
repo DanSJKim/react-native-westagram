@@ -8,11 +8,12 @@ import uuid from 'uuid';
 class Feeds extends Component {
 
     render() {
+      console.log('Feeds: ', this.props.articles)
         return (
             <View style={styles.feeds}>
               <FlatList
                 data={this.props.articles}
-                renderItem={({ item }) => <Article navigation={this.props.navigation} title={item.title}/>}
+                renderItem={({ item }) => <Article navigation={this.props.navigation} body={item.body} image={item.image}/>}
                 keyExtractor={item => item.id}
               />
               

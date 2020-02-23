@@ -22,7 +22,7 @@ export class MainFeed extends Component {
           }
     
           this.setState({
-               articles: [...this.state.articles, newComment],
+               articles: [newComment, ...this.state.articles],
           });
           
           this.props.route.params.image = undefined;
